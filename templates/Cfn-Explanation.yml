@@ -1,0 +1,42 @@
+AWSTemplateFormatVersion: 2010-09-09
+#Template in hangi versiyonda yazıldığını gösterir. Su an itibariyle sabittir. AWS degistirinceye kadar boyle kalacak.
+
+Description: |
+#Stack icinde nasil bir yapi oldgunun gostergesidir. Cloud formation un aciklamasidir. Zorunlu degildir ama tavsiye edilen bir bolumdur.
+
+Parameters:
+#User dan belirlemesini istedigimiz parametrelerin yazildigi bolumdur. User in pem dosyasi burada istenebilir. 
+
+Metadata:
+#Veriyi tanimlayan diger veridir. Zorunlu degildir. Veri hakkinda daha once elde edilen verilr burada sunulabilir. Resource bilgileri, acces key, region hepsi metedata dir.
+
+Mappings:
+#User in belli bir amac dogrultusunda yonlendirilmesidir. AWS template anatomy ont sayfasinda ayrintili olarak anlatilmistir bu kisim. Buraya yazilan bilgilere gore stack icindeki amaclar dogrultusunda user yonlendirilebilir.
+#3 component i vardir. ismi, cesidi ve alt alani seklinde tanimlanabilir. Resource kisminda bu bilgiler cagrilarak resource kismi olusturulabilir.
+#AMI turleri, instance tipleri burada yazilarak daha sonra sectirilebilir.
+
+Conditions:
+#Stack icerisinde gecen conditionlara gore resource secme sarti burada tanimlanabilir. 
+#Ornegin sirkette, production ve test ortaminda iki team in kullandigi bir slack ise bu sarti burada belirleyebiliriz. Parametre alaninda user a sorar isek !Ref degeri ile oradan aldigimiz cevaba gore bir sart belirleyebiliriz. 
+#Resource tarafinda burada tanimlanan sarti yazarak olusturulabilir.
+
+Resources:
+#Olmazsa olmaz basliktir. Yalnizca buradaki tanimlamalarla stack olusturulabilir. AWS in tum kaynaklari burada belirtilir.
+#https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html adresindan bu konuya erisilebilir.
+
+Transform:
+#Serverless appliactionlarda kullanilmaktadir.
+
+Outputs:
+#Stack icerisinde belli verilerin hazir bir sekilde burada goruntulenmesi saglanir.
+
+#Hata durumunda nerede problem oldugu cikar. Basta veya rollback yani stack icindeki hata gorunebilir.
+
+
+AWS KONSOLA BAKILACAK OLURSA
+OVERVIEW:
+#Stack id si ve description burada gorunur.
+
+TEMPLATE:
+#Yazdigimiz template burada gorunur.
+
